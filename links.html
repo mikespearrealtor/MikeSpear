@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mike Spear · Links</title>
+  <title>Mike Spear - Links</title>
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Mike Spear · Compass Real Estate">
+  <meta property="og:site_name" content="Mike Spear - Compass Real Estate">
   <meta property="og:title" content="Mike Spear">
-  <meta property="og:description" content="Realtor — modern real estate, coast to coast.">
+  <meta property="og:description" content="Realtor - modern real estate, coast to coast.">
   <meta property="og:url" content="https://links.mikespear.com">
   <meta property="og:image" content="https://files.mikespear.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mike Spear">
-  <meta name="twitter:description" content="Realtor — modern real estate, coast to coast.">
+  <meta name="twitter:description" content="Realtor - modern real estate, coast to coast.">
   <meta name="twitter:image" content="https://files.mikespear.com/og-image.png">
 
   <style>
@@ -26,142 +26,175 @@
       color: #fff;
       font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       min-height: 100vh;
-      padding: 52px 24px 72px;
+    }
+
+    .hero {
+      position: relative;
+      height: 420px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 240px;
+      background: linear-gradient(to bottom, transparent, #0a0a0a);
     }
 
     .wrap {
       max-width: 440px;
       margin: 0 auto;
+      padding: 0 24px 72px;
     }
 
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #555;
-      margin-bottom: 18px;
+    .monogram {
+      display: block;
+      height: 52px;
+      width: auto;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.1;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
-    .tagline {
-      font-size: 16px;
-      color: #888;
-      margin-bottom: 22px;
+    .meta {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 24px;
+      line-height: 1.6;
     }
 
     .rule {
-      width: 40px;
-      height: 2px;
-      background: #fff;
-    }
-
-    .section {
-      margin-top: 36px;
-    }
-
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #444;
-      margin-bottom: 10px;
-      padding-left: 2px;
+      width: 36px;
+      height: 1px;
+      background: #2a2a2a;
+      margin-bottom: 32px;
     }
 
     .links {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      margin-bottom: 32px;
     }
 
     a.btn {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 18px;
-      border: 1px solid #1e1e1e;
-      border-radius: 8px;
+      padding: 16px 20px;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
       color: #fff;
       text-decoration: none;
       font-size: 15px;
       font-weight: 500;
-      transition: background 0.12s, border-color 0.12s;
+      letter-spacing: 0.01em;
+      transition: background 0.15s, border-color 0.15s;
     }
 
     a.btn:hover {
-      background: #141414;
-      border-color: #2e2e2e;
+      background: #131313;
+      border-color: #2c2c2c;
     }
 
     a.btn .arrow {
-      color: #3a3a3a;
-      font-size: 14px;
+      color: #444;
+      font-size: 13px;
       flex-shrink: 0;
       margin-left: 12px;
     }
 
+    a.btn-compass {
+      padding: 14px 20px;
+    }
+
+    a.btn-compass img {
+      height: 15px;
+      width: auto;
+      filter: invert(1);
+      opacity: 0.8;
+    }
+
+    a.btn-compass:hover img {
+      opacity: 1;
+    }
+
+    a.btn-primary {
+      background: #fff;
+      color: #0a0a0a;
+      border-color: #fff;
+    }
+
+    a.btn-primary:hover {
+      background: #e8e8e8;
+      border-color: #e8e8e8;
+    }
+
+    a.btn-primary .arrow {
+      color: #888;
+    }
+
     footer {
-      margin-top: 64px;
-      font-size: 12px;
-      color: #2e2e2e;
-      text-align: center;
+      margin-top: 16px;
+      font-size: 11px;
+      color: #2a2a2a;
+      letter-spacing: 0.06em;
     }
   </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <p class="eyebrow">Compass Real Estate &middot; Houston, TX</p>
+  <div class="hero">
+    <img src="/hero.jpg" alt="Mike Spear">
+  </div>
+
+  <div class="wrap">
+
+    <img class="monogram" src="/logo.webp" alt="MS">
+
     <h1>Mike Spear</h1>
-    <p class="tagline">Realtor &mdash; modern real estate, coast to coast</p>
+    <p class="meta">Houston, TX &middot; Compass Real Estate &middot; 35+ years</p>
     <div class="rule"></div>
-  </header>
 
-  <div class="section">
-    <p class="section-label">Work with me</p>
     <div class="links">
-
-      <a class="btn" href="https://www.compass.com/agents/mike-spear/" target="_blank" rel="noopener">
-        Compass Profile <span class="arrow">&#8599;</span>
+      <a class="btn btn-compass" href="https://www.compass.com/agents/mike-spear/" target="_blank" rel="noopener">
+        <img src="/compass-logo.png" alt="Compass">
+        <span class="arrow">&#8599;</span>
       </a>
-
       <a class="btn" href="https://www.har.com/mike-spear/agent_spear" target="_blank" rel="noopener">
         HAR Profile <span class="arrow">&#8599;</span>
       </a>
-
-
     </div>
-  </div>
 
-  <div class="section">
-    <p class="section-label">Contact</p>
     <div class="links">
-
-      <a class="btn" href="tel:+17132047653">
+      <a class="btn btn-primary" href="tel:+17132047653">
         Call or Text &middot; 713-204-7653 <span class="arrow">&#8599;</span>
       </a>
-
       <a class="btn" href="mailto:mike@mikespear.com">
         mike@mikespear.com <span class="arrow">&#8599;</span>
       </a>
-
       <a class="btn" href="https://files.mikespear.com/contact.vcf">
         Save Contact <span class="arrow">&#8595;</span>
       </a>
-
     </div>
+
+    <footer>mikespear.com</footer>
+
   </div>
 
-  <footer>mikespear.com</footer>
-
-</div>
 </body>
 </html>
