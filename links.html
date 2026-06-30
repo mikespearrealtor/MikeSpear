@@ -26,40 +26,46 @@
       color: #fff;
       font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 440px;
+      padding: 48px 24px 72px;
     }
 
     .hero {
       position: relative;
-      height: 420px;
+      border-radius: 16px;
       overflow: hidden;
+      margin-bottom: 28px;
+      aspect-ratio: 4 / 5;
     }
 
     .hero img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 18%;
+      object-position: center 20%;
     }
 
     .hero::after {
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 240px;
-      background: linear-gradient(to bottom, transparent, #0a0a0a);
+      height: 45%;
+      background: linear-gradient(to bottom, transparent, rgba(10,10,10,0.85));
     }
 
-    .wrap {
-      max-width: 440px;
-      margin: 0 auto;
-      padding: 0 24px 72px;
-    }
-
-    .monogram {
-      display: block;
-      height: 52px;
+    .hero .monogram {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      height: 36px;
       width: auto;
-      margin-bottom: 24px;
+      margin: 0;
     }
 
     h1 {
@@ -158,13 +164,12 @@
 </head>
 <body>
 
-  <div class="hero">
-    <img src="/hero.jpg" alt="Mike Spear">
-  </div>
-
   <div class="wrap">
 
-    <img class="monogram" src="/logo.webp" alt="MS">
+    <div class="hero">
+      <img src="/hero.jpg" alt="Mike Spear">
+      <img class="monogram" src="/logo.webp" alt="MS">
+    </div>
 
     <h1>Mike Spear</h1>
     <p class="meta">Houston, TX &middot; Compass Real Estate &middot; 35+ years</p>
