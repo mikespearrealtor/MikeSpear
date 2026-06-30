@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -33,132 +33,183 @@
     .wrap {
       width: 100%;
       max-width: 440px;
-      padding: 48px 24px 72px;
+      padding: 48px 24px 64px;
     }
 
+    /* ── Hero ── */
     .hero {
       position: relative;
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
       margin-bottom: 28px;
       aspect-ratio: 4 / 5;
+      background: #141414;
     }
 
     .hero img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 20%;
+      display: block;
     }
 
     .hero::after {
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 45%;
-      background: linear-gradient(to bottom, transparent, rgba(10,10,10,0.85));
+      height: 42%;
+      background: linear-gradient(to bottom, transparent, rgba(10,10,10,0.88));
     }
 
     .hero .monogram {
       position: absolute;
       bottom: 18px;
       left: 20px;
-      height: 36px;
+      height: 34px;
       width: auto;
-      margin: 0;
     }
 
+    /* ── Identity ── */
     h1 {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.1;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
 
     .meta {
       font-size: 14px;
-      color: #555;
-      margin-bottom: 24px;
-      line-height: 1.6;
+      color: #6b6b6b;
+      margin-bottom: 28px;
+      letter-spacing: 0.01em;
     }
 
-    .rule {
-      width: 36px;
-      height: 1px;
-      background: #2a2a2a;
-      margin-bottom: 32px;
+    .meta .dot {
+      color: #333;
+      margin: 0 7px;
     }
 
+    /* ── Link groups ── */
     .links {
       display: flex;
       flex-direction: column;
       gap: 8px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
+    }
+
+    .group-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #3a3a3a;
+      margin-bottom: 10px;
+      padding-left: 2px;
     }
 
     a.btn {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px;
+      gap: 13px;
+      padding: 13px 16px;
       border: 1px solid #1c1c1c;
-      border-radius: 10px;
+      border-radius: 12px;
+      background: #0e0e0e;
       color: #fff;
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      transition: background 0.15s, border-color 0.15s;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
     }
 
     a.btn:hover {
-      background: #131313;
-      border-color: #2c2c2c;
+      background: #151515;
+      border-color: #2a2a2a;
     }
 
-    a.btn .arrow {
-      color: #444;
-      font-size: 13px;
+    a.btn:active {
+      transform: scale(0.985);
+    }
+
+    .icon {
       flex-shrink: 0;
-      margin-left: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    a.btn-compass {
-      padding: 14px 20px;
+    .icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: #aaa;
     }
 
-    a.btn-compass img {
+    .btn-label {
+      flex: 1;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.005em;
+    }
+
+    .btn-label small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: #555;
+      margin-top: 1px;
+    }
+
+    .chev {
+      flex-shrink: 0;
+      width: 15px;
       height: 15px;
-      width: auto;
-      filter: invert(1);
-      opacity: 0.8;
+      stroke: #3a3a3a;
     }
 
-    a.btn-compass:hover img {
-      opacity: 1;
-    }
-
+    /* Primary call-to-action */
     a.btn-primary {
       background: #fff;
-      color: #0a0a0a;
       border-color: #fff;
+      color: #0a0a0a;
     }
 
     a.btn-primary:hover {
-      background: #e8e8e8;
-      border-color: #e8e8e8;
+      background: #ececec;
     }
 
-    a.btn-primary .arrow {
-      color: #888;
+    a.btn-primary .icon {
+      background: rgba(10,10,10,0.07);
+    }
+
+    a.btn-primary .icon svg {
+      stroke: #0a0a0a;
+    }
+
+    a.btn-primary .chev {
+      stroke: #999;
     }
 
     footer {
-      margin-top: 16px;
       font-size: 11px;
       color: #2a2a2a;
       letter-spacing: 0.06em;
+    }
+
+    /* ── Entrance animation ── */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero, h1, .meta, .group { animation: rise 0.5s ease backwards; }
+      .hero { animation-delay: 0s; }
+      h1 { animation-delay: 0.08s; }
+      .meta { animation-delay: 0.12s; }
+      .group:nth-of-type(1) { animation-delay: 0.18s; }
+      .group:nth-of-type(2) { animation-delay: 0.24s; }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
     }
   </style>
 </head>
@@ -167,34 +218,65 @@
   <div class="wrap">
 
     <div class="hero">
-      <img src="/hero.jpg" alt="Mike Spear">
+      <img src="/hero.jpg" alt="Mike Spear" width="880" height="1100">
       <img class="monogram" src="/logo.webp" alt="MS">
     </div>
 
     <h1>Mike Spear</h1>
-    <p class="meta">Houston, TX &middot; Compass Real Estate &middot; 35+ years</p>
-    <div class="rule"></div>
+    <p class="meta">Houston, TX<span class="dot">&middot;</span>Compass Real Estate<span class="dot">&middot;</span>35+ years</p>
 
-    <div class="links">
-      <a class="btn btn-compass" href="https://www.compass.com/agents/mike-spear/" target="_blank" rel="noopener">
-        <img src="/compass-logo.png" alt="Compass">
-        <span class="arrow">&#8599;</span>
-      </a>
-      <a class="btn" href="https://www.har.com/mike-spear/agent_spear" target="_blank" rel="noopener">
-        HAR Profile <span class="arrow">&#8599;</span>
-      </a>
+    <div class="group">
+      <p class="group-label">Profiles</p>
+      <div class="links">
+
+        <a class="btn" href="https://www.compass.com/agents/mike-spear/" target="_blank" rel="noopener">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="14.8,9.2 12,12 9.2,14.8 12,12" fill="#aaa" stroke="none"/></svg>
+          </span>
+          <span class="btn-label">Compass<small>Agent profile</small></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+
+        <a class="btn" href="https://www.har.com/mike-spear/agent_spear" target="_blank" rel="noopener">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-7h6v7"/></svg>
+          </span>
+          <span class="btn-label">HAR<small>Agent profile</small></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+
+      </div>
     </div>
 
-    <div class="links">
-      <a class="btn btn-primary" href="tel:+17132047653">
-        Call or Text &middot; 713-204-7653 <span class="arrow">&#8599;</span>
-      </a>
-      <a class="btn" href="mailto:mike@mikespear.com">
-        mike@mikespear.com <span class="arrow">&#8599;</span>
-      </a>
-      <a class="btn" href="https://files.mikespear.com/contact.vcf">
-        Save Contact <span class="arrow">&#8595;</span>
-      </a>
+    <div class="group">
+      <p class="group-label">Get in touch</p>
+      <div class="links">
+
+        <a class="btn btn-primary" href="tel:+17132047653">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          </span>
+          <span class="btn-label">713-204-7653<small>Call or text</small></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+
+        <a class="btn" href="mailto:mike@mikespear.com">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </span>
+          <span class="btn-label">mike@mikespear.com<small>Email</small></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+
+        <a class="btn" href="https://files.mikespear.com/contact.vcf">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 19h14"/></svg>
+          </span>
+          <span class="btn-label">Save contact<small>Add to phone</small></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+
+      </div>
     </div>
 
     <footer>mikespear.com</footer>
