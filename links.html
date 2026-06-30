@@ -103,27 +103,69 @@
       font-weight: 600;
       letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: #3a3a3a;
+      color: #4a4a4a;
       margin-bottom: 10px;
       padding-left: 2px;
     }
 
+    /* ── Profile badges (real brand logos, white chips) ── */
+    a.badge {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 18px;
+      border-radius: 12px;
+      background: #fff;
+      text-decoration: none;
+      transition: transform 0.12s ease, background 0.15s ease;
+    }
+
+    a.badge:hover {
+      background: #f0f0f0;
+    }
+
+    a.badge:active {
+      transform: scale(0.985);
+    }
+
+    a.badge img {
+      height: 17px;
+      width: auto;
+      display: block;
+    }
+
+    .har-mark {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #1947c4;
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .har-mark .dot { color: #e0202b; padding: 0 1px; }
+    .har-mark .com { font-weight: 500; }
+
+    .badge .chev {
+      stroke: #aaa;
+    }
+
+    /* ── Contact cards ── */
     a.btn {
       display: flex;
       align-items: center;
       gap: 13px;
       padding: 13px 16px;
-      border: 1px solid #1c1c1c;
+      border: 1px solid #262626;
       border-radius: 12px;
-      background: #0e0e0e;
+      background: #161616;
       color: #fff;
       text-decoration: none;
       transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
     }
 
     a.btn:hover {
-      background: #151515;
-      border-color: #2a2a2a;
+      background: #1d1d1d;
+      border-color: #333;
     }
 
     a.btn:active {
@@ -135,7 +177,7 @@
       width: 36px;
       height: 36px;
       border-radius: 9px;
-      background: #1a1a1a;
+      background: #232323;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -144,13 +186,13 @@
     .icon svg {
       width: 18px;
       height: 18px;
-      stroke: #aaa;
+      stroke: #d4d4d4;
     }
 
     .btn-label {
       flex: 1;
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.005em;
     }
 
@@ -158,7 +200,7 @@
       display: block;
       font-size: 12px;
       font-weight: 400;
-      color: #555;
+      color: #8c8c8c;
       margin-top: 1px;
     }
 
@@ -166,30 +208,16 @@
       flex-shrink: 0;
       width: 15px;
       height: 15px;
-      stroke: #3a3a3a;
+      stroke: #5a5a5a;
     }
 
-    /* Primary call-to-action */
-    a.btn-primary {
-      background: #fff;
-      border-color: #fff;
-      color: #0a0a0a;
-    }
-
-    a.btn-primary:hover {
-      background: #ececec;
-    }
-
+    /* Primary action: subtle pop on the icon tile only, card stays consistent */
     a.btn-primary .icon {
-      background: rgba(10,10,10,0.07);
+      background: #fff;
     }
 
     a.btn-primary .icon svg {
       stroke: #0a0a0a;
-    }
-
-    a.btn-primary .chev {
-      stroke: #999;
     }
 
     footer {
@@ -229,19 +257,13 @@
       <p class="group-label">Profiles</p>
       <div class="links">
 
-        <a class="btn" href="https://www.compass.com/agents/mike-spear/" target="_blank" rel="noopener">
-          <span class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="14.8,9.2 12,12 9.2,14.8 12,12" fill="#aaa" stroke="none"/></svg>
-          </span>
-          <span class="btn-label">Compass<small>Agent profile</small></span>
+        <a class="badge" href="https://www.compass.com/agents/mike-spear/" target="_blank" rel="noopener">
+          <img src="/compass-logo.png" alt="Compass">
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
         </a>
 
-        <a class="btn" href="https://www.har.com/mike-spear/agent_spear" target="_blank" rel="noopener">
-          <span class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-7h6v7"/></svg>
-          </span>
-          <span class="btn-label">HAR<small>Agent profile</small></span>
+        <a class="badge" href="https://www.har.com/mike-spear/agent_spear" target="_blank" rel="noopener">
+          <span class="har-mark">HAR<span class="dot">&middot;</span><span class="com">com</span></span>
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
         </a>
 
