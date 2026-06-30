@@ -129,21 +129,17 @@
     }
 
     a.badge img {
-      height: 17px;
       width: auto;
       display: block;
     }
 
-    .har-mark {
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      color: #1947c4;
-      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    .badge .compass-mark {
+      height: 17px;
     }
 
-    .har-mark .dot { color: #e0202b; padding: 0 1px; }
-    .har-mark .com { font-weight: 500; }
+    .badge .har-mark {
+      height: 21px;
+    }
 
     .badge .chev {
       stroke: #aaa;
@@ -258,12 +254,12 @@
       <div class="links">
 
         <a class="badge" href="https://www.compass.com/agents/mike-spear/" target="_blank" rel="noopener">
-          <img src="/compass-logo.png" alt="Compass">
+          <img class="compass-mark" src="/compass-logo.png" alt="Compass">
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
         </a>
 
         <a class="badge" href="https://www.har.com/mike-spear/agent_spear" target="_blank" rel="noopener">
-          <span class="har-mark">HAR<span class="dot">&middot;</span><span class="com">com</span></span>
+          <img class="har-mark" src="/har-logo.png" alt="HAR.com">
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
         </a>
 
